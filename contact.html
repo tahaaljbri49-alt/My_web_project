@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - مشروع تصميم الويب</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons (Requirement 4) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- القائمة الرئيسية -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><i class="fa-solid fa-code"></i> موقعي الهندسي</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">الخدمات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">المعرض</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">تواصل معنا</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-light text-dark bg-light ms-2 px-3" href="login.html">دخول</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- محتوى صفحة تواصل معنا -->
+    <main class="container my-5">
+        <h2 class="mb-4 text-center fw-bold"><i class="fa-solid fa-envelope-open-text text-primary"></i> تواصل معنا</h2>
+        
+        <div class="row g-5">
+            <!-- نموذج الإرسال -->
+            <div class="col-md-7">
+                <div class="card shadow-sm p-4 border-0">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label"><i class="fa-solid fa-user"></i> الاسم الكامل</label>
+                            <input type="text" class="form-control" id="name" placeholder="أدخل اسمك هنا" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><i class="fa-solid fa-at"></i> البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label"><i class="fa-solid fa-comment"></i> رسالتك</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- معلومات التواصل وأيقونات Font Awesome -->
+            <div class="col-md-5">
+                <div class="card shadow-sm p-4 border-0 bg-light h-100">
+                    <h4 class="fw-bold mb-3">معلومات الاتصال</h4>
+                    <p class="text-muted">يسعدنا تواصلكم معنا عبر القنوات التالية:</p>
+                    
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fa-solid fa-location-dot text-danger fa-lg me-3"></i>
+                            <span>اليمن - جامعة ذمار</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fa-solid fa-phone text-success fa-lg me-3"></i>
+                            <span>+967 770 000 000</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fa-solid fa-envelope text-primary fa-lg me-3"></i>
+                            <span>taha@example.com</span>
+                        </li>
+                    </ul>
+
+                    <hr class="my-4">
+
+                    <!-- وسائل التواصل الاجتماعي باستخدام Font Awesome -->
+                    <h5 class="fw-bold mb-3">تابعنا على المنصات</h5>
+                    <div class="d-flex gap-3 fs-4">
+                        <a href="#" class="text-primary"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-info"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-dark"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="text-primary"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">جميع الحقوق محفوظة &copy; 2026 - المهندس طه الجبري</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
