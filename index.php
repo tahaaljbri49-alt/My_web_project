@@ -1,87 +1,86 @@
 <?php
-// متغيرات لتخزين البيانات المرسلة
-$techName = "";
-$techDescription = "";
-$isSubmitted = false;
+    // 1. تعريف المتغيرات
+    $studentName = "طه";
+    $courseName = "تطوير ويب (تكنولوجيا صفحة PHP)";
+    $university = "جامعة ذمار";
+    $score = 95;
 
-// التحقق مما إذا تم إرسال النموذج عبر طريقة POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // استقبال وتطهير المدخلات لضمان الأمان
-    $techName = htmlspecialchars(trim($_POST['techName']));
-    $techDescription = htmlspecialchars(trim($_POST['techDescription']));
-    $isSubmitted = true;
-}
-?>
-
+    // 2. تعريف دالة (Function) لحساب وتنسيق رسالة التقدير
+    Function getEvaluation($grade) {
+        If ($grade >= 90) {
+            Return "ممتاز (Excellent)";
+        } elseif ($grade >= 80) {
+            Return "جيد جداً (Very Good)";
+        } else {
+            Return "جيد (Good)";
+        }
+    }
+    ?>
+    
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطوير ويب - واجب رقم 36</title>
-    <!-- استدعاء Bootstrap للتصميم السريع والاحترافي -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.5.3.0/npm/bootstrap@5.3.0/dist/css/rtl.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/rtl.min.css">
+    <title>واجب تطوير الويب – PHP</title>
     <style>
-        body {
-            background-color: #f4f6f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        Body {
+            Font-family: 'Tahoma', sans-serif;
+            Background-color: #f4f7f6;
+            Color: #333;
+            Margin: 0;
+            Padding: 20px;
         }
-        .card {
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        .container {
+            Max-width: 600px;
+            Margin: 0 auto;
+            Background: #ffffff;
+            Padding: 30px;
+            Border-radius: 10px;
+            Box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        H1 {
+            Color: #2c3e50;
+            Text-align: center;
+            Border-bottom: 2px solid #3498db;
+            Padding-bottom: 10px;
+        }
+        .info-box {
+            Background: #ecf0f1;
+            Padding: 15px;
+            Margin: 15px 0;
+            Border-radius: 5px;
+            Border-right: 5px solid #3498db;
+        }
+        .footer {
+            Text-align: center;
+            Margin-top: 20px;
+            Font-size: 0.9em;
+            Color: #7f8c8d;
         }
     </style>
 </head>
 <body>
 
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card p-4 bg-white">
-                    <h2 class="text-center text-primary mb-3">تطوير ويب م/2 - واجب رقم 36</h2>
-                    <p class="text-muted text-center">تصميم وتطوير صفحة تكنولوجيا باستخدام لغة PHP</p>
-                    <hr>
+<div class="container">
+    <h1>صفحة تقرير الطالب (PHP)</h1>
 
-                    <?php if (!$isSubmitted): ?>
-                        <!-- نموذج الإدخال (Form) -->
-                        <form action="" method="POST">
-                            <div class="mb-3">
-                                <label for="techName" class="form-label">اسم التقنية أو الأداة التكنولوجية:</label>
-                                <input type="text" class="card form-control p-2" id="techName" name="techName" required placeholder="أدخل اسم التقنية...">
-                            </div>
+    
 
-                            <div class="mb-3">
-                                <label for="techDescription" class="form-label">وصف مختصر:</label>
-                                <textarea class="card form-control p-2" id="techDescription" name="techDescription" rows="4" required placeholder="اكتب نبذة مختصرة عنها..."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary w-100 py-2">إرسال ومعالجة البيانات عبر PHP</button>
-                        </form>
-
-                    <?php else: ?>
-                        <!-- قسم عرض النتيجة بعد المعالجة بـ PHP -->
-                        <div class="alert alert-success text-center" role="alert">
-                            <strong>تمت معالجة وعرض البيانات بنجاح بواسطة PHP!</strong>
-                        </div>
-
-                        <div class="mb-3">
-                            <h5>التقنية المُدخلة:</h5>
-                            <div class="p-3 bg-light rounded border"><?php echo $techName; ?></div>
-                        </div>
-
-                        <div class="mb-3">
-                            <h5>الوصف:</h5>
-                            <div class="p-3 bg-light rounded border"><?php echo nl2br($techDescription); ?></div>
-                        </div>
-
-                        <a href="" class="btn btn-secondary w-100 mt-3">إدخال تقنية أخرى</a>
-                    <?php endif; ?>
-
-                </div>
-            </div>
-        </div>
+    <!—3. طباعة المخرجات باستخدام HTML و PHP 
+    <div class="info-box">
+        <p><strong>اسم الطالب:</strong> <?php echo $studentName; ?></p>
+        <p><strong>المساق الدراسي:</strong> <?php echo $courseName; ?></p>
+        <p><strong>الجامعة:</strong> <?php echo $university; ?></p>
+        <p><strong>الدرجة:</strong> <?php echo $score; ?> / 100</p>
+        <p><strong>التقدير العام:</strong> <?php echo getEvaluation($score); ?></p>
     </div>
+
+</div>
+
+<div class="footer">
+    <p>تم تصميم وتنفيذ الصفحة باستخدام PHP و HTML و CSS بنجاح.</p>
+</div>
 
 </body>
 </html>
